@@ -14,8 +14,8 @@ interface IPostCardProps {
   title: string;
   image: string;
   link: string;
-  category: string;
-  date: string;
+  tags: string[];
+  date?: string;
   useSecondaryButton?: boolean;
   buttonText?: string;
   useExternalLink?: boolean;
@@ -26,7 +26,7 @@ export const PostCard: React.FC<IPostCardProps> = ({
   title,
   image,
   link,
-  category,
+  tags,
   date,
   useExternalLink = false,
   buttonText = "Read more",
@@ -49,7 +49,7 @@ export const PostCard: React.FC<IPostCardProps> = ({
       alignItems="flex-start"
       justifyContent="flex-start"
       bg={bg}
-      borderRadius={16}
+      borderRadius={10}
       padding={4}
       position="relative"
       overflow="hidden"
@@ -121,7 +121,7 @@ export const PostCard: React.FC<IPostCardProps> = ({
       />
       <Image
         draggable="false"
-        src="/blog/gradient-dark.svg"
+        src="/gradient-dark.svg"
         position="absolute"
         top={0}
         left={0}
@@ -141,22 +141,28 @@ export const PostCard: React.FC<IPostCardProps> = ({
         height="100%"
       >
         <Box>
-          <Text
-            as="span"
-            fontSize="12px"
-            paddingY={1}
-            paddingX={2}
-            bg="brand.blue"
-            borderRadius={120}
-          >
-            {category}
-          </Text>
-          <Heading as="h3" size="md" mt={3} mb={1}>
+          <Heading as="h3" size="md" mt={3} mb={2} fontWeight={400}>
             {title}
           </Heading>
-          <Text as="span" fontSize="12px">
-            {date}
-          </Text>
+          {date && (
+            <Text as="span" fontSize="12px">
+              {date}
+            </Text>
+          )}
+          <Flex flexWrap="wrap" gap={1}>
+            {tags?.map((tag) => (
+              <Text
+                as="span"
+                fontSize="12px"
+                paddingY="2px"
+                paddingX="6px"
+                bg="brand.blue"
+                borderRadius={120}
+              >
+                {tag}
+              </Text>
+            ))}
+          </Flex>
         </Box>
       </Flex>
     </Flex>

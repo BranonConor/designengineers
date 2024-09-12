@@ -1,17 +1,17 @@
 "use client";
 
 import {
-  Box,
   Flex,
   Heading,
   useColorModeValue,
   Text,
-  Button,
-  Image,
+  Grid,
+  Box,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { FancyHeading } from "@/components/FancyHeading";
 import { PageWrapper } from "@/components/PageWrapper";
+import { PostCard } from "@/components/blog/PostCard";
 
 export default function Home() {
   const bg = useColorModeValue("white", "brand.grey");
@@ -86,7 +86,7 @@ export default function Home() {
           >
             mentoring sessions with tech workers
           </Text>{" "}
-          is: what is a design engineer (or its many synonyms) and what do they
+          is: what IS a design engineer (or its many synonyms) and what do they
           do?
         </Text>
         <Text as="p" mb={4}>
@@ -107,6 +107,56 @@ export default function Home() {
           to teach others everything they need to know about this awesome niche.
           Let's dive right in.
         </Text>
+        <Box
+          borderRadius={10}
+          bg="brand.gradient"
+          width="100%"
+          padding={4}
+          my={12}
+        >
+          <Heading as="h3" color="white" mt={2} mb={4} fontWeight={400}>
+            The Common Workstreams
+          </Heading>
+          <Grid gridTemplateColumns={["1fr", "1fr", "1fr 1fr"]} gap={4}>
+            <PostCard
+              title="Design Systems"
+              image={"/workstreams/design-systems/cover.png"}
+              link={"/workstreams/design-systems"}
+              tags={[
+                "Design Engineer",
+                "Design Technologist",
+                "UX Engineer",
+                "Frontend Engineer",
+                "UI Engineer",
+              ]}
+            />
+            <PostCard
+              title="Prototyping"
+              image={"/workstreams/prototyping/cover.png"}
+              link={"/workstreams/prototyping"}
+              tags={[
+                "Design Engineer",
+                "Design Technologist",
+                "UX Engineer",
+                "Frontend Engineer",
+                "UI Engineer",
+              ]}
+            />
+            <PostCard
+              title="Accessibility"
+              image={""}
+              link={"/workstreams/accessibility"}
+              tags={[
+                "Design Engineer",
+                "Design Technologist",
+                "UX Engineer",
+                "Frontend Engineer",
+                "UI Engineer",
+              ]}
+            />
+          </Grid>
+        </Box>
+
         {/* <Flex
           flexDirection={["column", "column", "row"]}
           width={["100%", "auto", "auto"]}
