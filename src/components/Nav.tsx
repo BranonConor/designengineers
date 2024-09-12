@@ -25,7 +25,7 @@ export const Nav = () => {
     "/icons/blog-dark.svg",
     "/icons/blog-light.svg"
   );
-  const bg = useColorModeValue("brand.lightBg", "brand.darkBg");
+  const bg = useColorModeValue("rgba(255,255,255,0.35)", "rgba(0,0,0,0.35)");
   const shadow = useColorModeValue(
     "lg",
     "0px 4px 15px 0px rgba(226,175,255, 0.10)"
@@ -49,6 +49,7 @@ export const Nav = () => {
       px={4}
     >
       <Flex
+        backdropFilter="blur(10px)"
         width="100%"
         maxWidth="1080px"
         alignItems="center"

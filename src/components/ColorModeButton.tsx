@@ -19,7 +19,7 @@ export const ColorModeButton: React.FC<ColorModeButtonProps> = ({
     <MoonIcon color="brand.grey" width="16px" height="16px" />,
     <SunIcon width="16px" height="16px" />
   );
-  const bg = useColorModeValue("brand.lightBg", "brand.darkBg");
+  const bg = useColorModeValue("rgba(255,255,255,0.5)", "rgba(0,0,0,0.5)");
   const shadow = useColorModeValue(
     "lg",
     "0px 4px 15px 0px rgba(226,175,255, 0.10)"
@@ -35,6 +35,7 @@ export const ColorModeButton: React.FC<ColorModeButtonProps> = ({
       right={4}
       zIndex={9}
       borderRadius="100%"
+      backdropFilter="blur(10px)"
       bg={bg}
       boxShadow={shadow}
       as={motion.button}

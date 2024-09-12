@@ -30,7 +30,7 @@ export const MobileNav = () => {
     "/icons/blog-dark.svg",
     "/icons/blog-light.svg"
   );
-  const bg = useColorModeValue("brand.lightBg", "brand.darkBg");
+  const bg = useColorModeValue("rgba(255,255,255,0.5)", "rgba(0,0,0,0.5)");
   const shadow = useColorModeValue(
     "lg",
     "0px 4px 15px 0px rgba(226,175,255, 0.10)"
@@ -56,6 +56,7 @@ export const MobileNav = () => {
       px={4}
     >
       <UnorderedList
+        backdropFilter="blur(10px)"
         display="flex"
         alignItems="center"
         width="100%"
