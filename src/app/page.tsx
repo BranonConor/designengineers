@@ -208,7 +208,20 @@ export default function Home() {
           </Heading>
           <Text as="p" mb={4}>
             We run a spectrum of 'designers who can code' to 'engineers with
-            design skills'.
+            design skills', and everything in between. Some of us identify as
+            engineers, some more as designers, but we all share both skillsets
+            to some degree!
+          </Text>
+          <Text as="p" mb={4}>
+            Where you fall on that spectrum can influence what opportunities you
+            have as a design engineer. Will you be a prototyper? A design
+            systems engineer? An accessibility specialist? A little bit of
+            everything? Depends greatly on the porportion of design/code skills
+            you are bringing to the table.
+          </Text>
+          <Text as="p" mb={4}>
+            At that - what ARE the various workstreams design engineers usually
+            have/own? Great question, let's break it down (🕺🏻) 👇🏽
           </Text>
         </Box>
 
