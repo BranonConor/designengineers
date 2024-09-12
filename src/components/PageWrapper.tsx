@@ -131,7 +131,6 @@ export const PageWrapper: React.FC<BoxProps> = ({
           />
           {children}
         </Box>
-        <Wave />
       </Box>
     </AnimatePresence>
   );
