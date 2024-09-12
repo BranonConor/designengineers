@@ -10,8 +10,6 @@ import {
 } from "@chakra-ui/react";
 import { PageWrapper } from "@/components/PageWrapper";
 import { FancyHeading } from "@/components/FancyHeading";
-import { Photography } from "@/components/sections/Photography";
-import { Music } from "@/components/sections/Music";
 import Link from "next/link";
 import { ChatIcon } from "@chakra-ui/icons";
 
@@ -80,8 +78,6 @@ export default function Home() {
           Life's too short to do anything but what you love. Here are some of my
           other passions:
         </Text>
-        <Music />
-        <Photography />
       </Flex>
     </PageWrapper>
   );

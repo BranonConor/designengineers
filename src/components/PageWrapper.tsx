@@ -20,8 +20,8 @@ export const PageWrapper: React.FC<BoxProps> = ({
         maxWidth="100%"
         width="100%"
         paddingY={0}
-        pl={[0, 0, 16]}
         pr={0}
+        pt={[4, 4, 12]}
         display="flex"
         justifyContent="center"
         boxSizing="border-box"
@@ -33,10 +33,11 @@ export const PageWrapper: React.FC<BoxProps> = ({
         <MobileNav />
         <Box
           as={motion.div}
-          maxWidth="1440px"
+          maxWidth="1080px"
           position="relative"
           overflowX="hidden"
-          paddingY={[12, 14, 16]}
+          pt={[4, 4, 16]}
+          pb={[12, 14, 16]}
           paddingX={[4, 4, 8]}
           width="100%"
           zIndex={1}

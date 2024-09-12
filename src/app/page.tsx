@@ -9,12 +9,9 @@ import {
   Button,
   Image,
 } from "@chakra-ui/react";
-import { DownloadIcon } from "@chakra-ui/icons";
 import Link from "next/link";
-import { Technologies } from "@/components/sections/Technologies";
 import { FancyHeading } from "@/components/FancyHeading";
 import { PageWrapper } from "@/components/PageWrapper";
-import { Showcase } from "@/components/sections/Showcase";
 
 export default function Home() {
   const bg = useColorModeValue("white", "brand.grey");
@@ -27,19 +24,90 @@ export default function Home() {
         alignItems="flex-start"
         justifyContent="flex-start"
       >
-        <Heading as="h1" size="2xl" mb={4}>
-          Hi, I'm Branon! 👋
+        <Heading as="h1" size="2xl" mb={4} fontWeight={400}>
+          DESIGN ENGINEERS
         </Heading>
-        <FancyHeading>I'm a UX-focused software engineer.</FancyHeading>
-        <Text as="p" mb={8}>
-          With a degree in behavioral neuroscience, a seasoned eye for
-          best-in-class UX/UI, and a powerful command of modern technologies to
-          build quality interfaces and experiences, my strengths lie at the
-          intersection of technology and people. I strive to build intuitive,
-          accessible, and scalable software that delights users and propels
-          businesses forward.
+        <FancyHeading fontWeight={400}>What the @#$%! are they?</FancyHeading>
+        <Text as="p" mb={4}>
+          Welcome to{" "}
+          <Text
+            as={Link}
+            href="/"
+            color="brand.blue"
+            textDecoration="underline"
+            fontWeight={700}
+            size="md"
+            _hover={{
+              color: "brand.pink",
+            }}
+          >
+            designengineers.xyz
+          </Text>
+          ! I'm{" "}
+          <Text
+            as="a"
+            href="https://www.branon.dev"
+            color="brand.blue"
+            textDecoration="underline"
+            fontWeight={700}
+            target="blank"
+            rel="noreferrer noopenner"
+            size="md"
+            _hover={{
+              color: "brand.pink",
+            }}
+          >
+            Branon Eusebio
+          </Text>
+          , and I'm a design engineer, design technologist, UX engineer...
+          creative technologist? UI/UX Developer? Maybe I'm actually a frontend
+          engineer? Uhhh okay yeah this is getting confusing.
         </Text>
-        <Flex
+        <Text as="p" mb={4}>
+          Truth is - this career is awesome. But it's also one of the most
+          ambiguous careers out there. Every org uses a different job title, or
+          uses the same named-role differently, muddying the waters for anyone
+          interested in pursuing these types of gigs.
+        </Text>
+        <Text as="p" mb={4}>
+          One of the most frequent topics that come up during my{" "}
+          <Text
+            as="a"
+            href="https://adplist.org/mentors/branon-eusebio?session=34910-mentorship-session"
+            color="brand.blue"
+            textDecoration="underline"
+            fontWeight={700}
+            target="blank"
+            rel="noreferrer noopenner"
+            size="md"
+            _hover={{
+              color: "brand.pink",
+            }}
+          >
+            mentoring sessions with tech workers
+          </Text>{" "}
+          is: what is a design engineer (or its many synonyms) and what do they
+          do?
+        </Text>
+        <Text as="p" mb={4}>
+          So I'm starting{" "}
+          <Text
+            as={Link}
+            href="/"
+            color="brand.blue"
+            textDecoration="underline"
+            fontWeight={700}
+            size="md"
+            _hover={{
+              color: "brand.pink",
+            }}
+          >
+            designengineers.xyz
+          </Text>{" "}
+          to teach others everything they need to know about this awesome niche.
+          Let's dive right in.
+        </Text>
+        {/* <Flex
           flexDirection={["column", "column", "row"]}
           width={["100%", "auto", "auto"]}
           mb={[8, 10, 12]}
@@ -65,10 +133,7 @@ export default function Home() {
             <DownloadIcon mr={2} width={4} />
             Download resume
           </Button>
-        </Flex>
-
-        <Technologies />
-        <Showcase />
+        </Flex> */}
       </Flex>
     </PageWrapper>
   );

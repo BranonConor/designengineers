@@ -11,10 +11,11 @@ const colors = {
     lightGrey: "#e6e6e6",
     darkBg: "#111",
     lightBg: "#F6F6F6",
-    pink: "#FF0096",
+    pink: "#FF008A", //orange now, forgive me father for I have sinned with this bad code
     darkPink: "#980059",
     blue: "#0080c7",
-    gradient: "linear-gradient(124.41deg,#0072b1,#fd36ab 95.2%)",
+    gradient:
+      "linear-gradient(141.627deg, #F14D70 11%, #FF008A 32%, #FF446C 52%, #FFB016 87%);",
   },
   shadows: {
     neon: "0px 4px 15px 0px rgba(226,175,255, 0.6)",

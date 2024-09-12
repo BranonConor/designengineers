@@ -1,11 +1,24 @@
 "use client";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { Box, useColorMode, useColorModeValue } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import {
+  Box,
+  useColorMode,
+  useColorModeValue,
+  BoxProps,
+} from "@chakra-ui/react";
+import { motion, MotionProps } from "framer-motion";
+import React from "react";
 
-export const ColorModeButton = () => {
+type ColorModeButtonProps = BoxProps & MotionProps;
+
+export const ColorModeButton: React.FC<ColorModeButtonProps> = ({
+  ...props
+}) => {
   const { toggleColorMode } = useColorMode();
-  const icon = useColorModeValue(<MoonIcon color="brand.grey" />, <SunIcon />);
+  const icon = useColorModeValue(
+    <MoonIcon color="brand.grey" width="16px" height="16px" />,
+    <SunIcon width="16px" height="16px" />
+  );
   const bg = useColorModeValue("brand.lightBg", "brand.darkBg");
   const shadow = useColorModeValue(
     "lg",
@@ -14,10 +27,10 @@ export const ColorModeButton = () => {
 
   return (
     <Box
-      display="flex"
+      display={["flex", "flex", "none"]}
       alignItems="center"
       justifyContent="center"
-      position="fixed"
+      position={"fixed"}
       top={4}
       right={4}
       zIndex={9}
@@ -27,7 +40,7 @@ export const ColorModeButton = () => {
       as={motion.button}
       aria-label="color mode toggle"
       onClick={toggleColorMode}
-      padding={4}
+      padding="14px"
       whileHover={{
         scale: 1.1,
         transition: { duration: 0.1 },
@@ -38,6 +51,7 @@ export const ColorModeButton = () => {
         transition: { duration: 0.1 },
         rotate: -10,
       }}
+      {...props}
     >
       {icon}
     </Box>

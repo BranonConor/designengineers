@@ -35,8 +35,6 @@ export const MobileNav = () => {
     "lg",
     "0px 4px 15px 0px rgba(226,175,255, 0.10)"
   );
-  const border = useColorModeValue("2px solid", "0px solid");
-  const borderColor = useColorModeValue("brand.lightGrey", "none");
   const itemShadow = useColorModeValue(
     "0px 4px 15px 0px rgba(0,0,0, 0.2)",
     "0px 4px 15px 0px rgba(226,175,255, 0.2)"
@@ -55,26 +53,28 @@ export const MobileNav = () => {
       bottom={0}
       zIndex={10}
       width="100%"
-      bg={bg}
-      boxShadow={shadow}
-      borderTop={border}
-      borderTopColor={borderColor}
-      overflow="hidden"
+      px={4}
     >
       <UnorderedList
         display="flex"
         alignItems="center"
         width="100%"
         margin={0}
-        height="100%"
+        bg={bg}
+        boxShadow={shadow}
+        overflow="hidden"
+        borderRadius={8}
+        gap={4}
+        py="4px"
+        px={2}
       >
         <ListItem
           borderRadius="10px"
           as={motion.li}
           listStyleType="none"
-          height={12}
+          height={10}
           cursor="pointer"
-          width="70%"
+          width="20%"
           whileHover={{
             scale: 1.1,
             transition: { duration: 0.05, type: "spring" },
@@ -94,16 +94,16 @@ export const MobileNav = () => {
             alignItems="center"
             justifyContent="center"
           >
-            <Image src={homeIcon} width={6} height={6} boxSizing="border-box" />
+            <Image src={homeIcon} width={4} height={4} boxSizing="border-box" />
           </Box>
         </ListItem>
         <ListItem
           borderRadius="10px"
           as={motion.li}
           listStyleType="none"
-          height={12}
+          height={10}
           cursor="pointer"
-          width="70%"
+          width="20%"
           whileHover={{
             scale: 1.1,
             transition: { duration: 0.05, type: "spring" },
@@ -125,8 +125,8 @@ export const MobileNav = () => {
           >
             <Image
               src={aboutIcon}
-              width={6}
-              height={6}
+              width={4}
+              height={4}
               boxSizing="border-box"
             />
           </Box>
@@ -135,9 +135,9 @@ export const MobileNav = () => {
           borderRadius="10px"
           as={motion.li}
           listStyleType="none"
-          height={12}
+          height={10}
           cursor="pointer"
-          width="70%"
+          width="20%"
           whileHover={{
             scale: 1.1,
             transition: { duration: 0.05, type: "spring" },
@@ -159,8 +159,8 @@ export const MobileNav = () => {
           >
             <Image
               src={projectsIcon}
-              width={6}
-              height={6}
+              width={4}
+              height={4}
               boxSizing="border-box"
             />
           </Box>
@@ -169,9 +169,9 @@ export const MobileNav = () => {
           borderRadius="10px"
           as={motion.li}
           listStyleType="none"
-          height={12}
+          height={10}
           cursor="pointer"
-          width="70%"
+          width="20%"
           whileHover={{
             scale: 1.1,
             transition: { duration: 0.05, type: "spring" },
@@ -193,8 +193,8 @@ export const MobileNav = () => {
           >
             <Image
               src={engagementsIcon}
-              width={6}
-              height={6}
+              width={4}
+              height={4}
               boxSizing="border-box"
             />
           </Box>
@@ -203,9 +203,9 @@ export const MobileNav = () => {
           borderRadius="10px"
           as={motion.li}
           listStyleType="none"
-          height={12}
+          height={10}
           cursor="pointer"
-          width="70%"
+          width="20%"
           whileHover={{
             scale: 1.1,
             transition: { duration: 0.05, type: "spring" },
@@ -225,7 +225,7 @@ export const MobileNav = () => {
             alignItems="center"
             justifyContent="center"
           >
-            <Image src={blogIcon} width={6} height={6} boxSizing="border-box" />
+            <Image src={blogIcon} width={4} height={4} boxSizing="border-box" />
           </Box>
         </ListItem>
       </UnorderedList>

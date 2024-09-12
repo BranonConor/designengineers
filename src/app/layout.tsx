@@ -22,6 +22,7 @@ export default function RootLayout({
         margin: "none",
         overflowX: "hidden",
         scrollBehavior: "smooth",
+        background: "black",
       }}
     >
       <body>
