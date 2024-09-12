@@ -181,13 +181,19 @@ export default function Home() {
         </Flex>
 
         <Text as="p" mb={4}>
-          Everything you read on this site is my own personal experience + the
-          experience of many other professionals I've personally chatted with,
-          etc. While I believe it's all generally accurate, it doesn't mean it's
-          the end-all-be-all ✨
+          Everything you read on this site is my own personal experience from
+          being in the industry for some time now. While I believe it's all
+          generally accurate, it doesn't mean it's the end-all-be-all ✨
         </Text>
 
-        <Box borderRadius={10} bg={sectionBg} width="100%" padding={4} my={12}>
+        <Box
+          borderRadius={10}
+          bg={sectionBg}
+          width="100%"
+          padding={4}
+          mt={12}
+          mb={8}
+        >
           <Heading as="h3" mt={2} mb={4} fontWeight={400}>
             Who we REALLY are
           </Heading>

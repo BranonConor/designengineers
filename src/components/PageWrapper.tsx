@@ -1,7 +1,6 @@
 "use client";
 
-import { Box, BoxProps, useColorModeValue } from "@chakra-ui/react";
-import { Wave } from "./Wave";
+import { Box, BoxProps, useColorModeValue, Text } from "@chakra-ui/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Nav } from "./Nav";
 import { MobileNav } from "./MobileNav";
@@ -22,6 +21,7 @@ export const PageWrapper: React.FC<BoxProps> = ({
     ref.current && ref.current.getBoundingClientRect().right - 2
   );
   const [isEndOfPage, setIsEndOfPage] = useState(false);
+  const [prog, setProg] = useState(0);
 
   const onScroll = () => {
     if (global.window) {
@@ -36,6 +36,7 @@ export const PageWrapper: React.FC<BoxProps> = ({
       const scrolled = (winScroll / height) * 100;
 
       setScrollTop(scrolled);
+      setProg(Math.round(scrolled));
 
       const leftEdge =
         ref.current && ref.current.getBoundingClientRect().left + 2;
@@ -125,7 +126,11 @@ export const PageWrapper: React.FC<BoxProps> = ({
             position="fixed"
             left={leftEdge || 0}
             top="56px"
-          />
+          >
+            <Text position="relative" top="0" width="30px">
+              {prog}%
+            </Text>
+          </Box>
           <Box
             transition="0.1s ease all"
             width={["0", "0", "1px"]}
@@ -135,7 +140,11 @@ export const PageWrapper: React.FC<BoxProps> = ({
             position="fixed"
             left={rightEdge || 0}
             bottom="-56px"
-          />
+          >
+            <Text position="relative" bottom="0" width="30px">
+              {prog}%
+            </Text>
+          </Box>
 
           {children}
         </Box>
