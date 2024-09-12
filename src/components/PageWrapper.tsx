@@ -11,7 +11,7 @@ export const PageWrapper: React.FC<BoxProps> = ({
   children,
   ...otherProps
 }) => {
-  const lineColor = useColorModeValue("black", "white");
+  const lineColor = useColorModeValue("brand.grey", "black");
   const [scrollTop, setScrollTop] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const [leftEdge, setLeftEdge] = useState<number | null>(
