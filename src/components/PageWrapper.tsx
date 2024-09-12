@@ -12,7 +12,7 @@ export const PageWrapper: React.FC<BoxProps> = ({
   children,
   ...otherProps
 }) => {
-  const lineColor = useColorModeValue("brand.grey", "brand.lightGrey");
+  const lineColor = useColorModeValue("black", "white");
   const [scrollTop, setScrollTop] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const [leftEdge, setLeftEdge] = useState<number | null>(
@@ -120,21 +120,21 @@ export const PageWrapper: React.FC<BoxProps> = ({
             transition="0.1s ease all"
             width={["0", "0", "1px"]}
             borderRadius={10}
-            bg={isEndOfPage ? "brand.pink" : lineColor}
+            bg={isEndOfPage ? lineColor : "brand.pink"}
             height={`${scrollTop}%`}
             position="fixed"
             left={leftEdge || 0}
-            top="60px"
+            top="56px"
           />
           <Box
             transition="0.1s ease all"
             width={["0", "0", "1px"]}
             borderRadius={10}
-            bg={isEndOfPage ? "brand.orange" : lineColor}
+            bg={isEndOfPage ? lineColor : "brand.orange"}
             height={`${scrollTop}%`}
             position="fixed"
             left={rightEdge || 0}
-            bottom="-60px"
+            bottom="-56px"
           />
 
           {children}
