@@ -144,7 +144,7 @@ export default function Home() {
             />
             <PostCard
               title="Accessibility"
-              image={""}
+              image={"/workstreams/accessibility/cover.png"}
               link={"/workstreams/accessibility"}
               tags={[
                 "Design Engineer",

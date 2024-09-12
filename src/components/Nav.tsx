@@ -6,6 +6,7 @@ import {
   Box,
   useColorModeValue,
   Tooltip,
+  Divider,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -20,14 +21,6 @@ export const Nav = () => {
     "/icons/user-dark.svg",
     "/icons/user-light.svg"
   );
-  const projectsIcon = useColorModeValue(
-    "/icons/projects-dark.svg",
-    "/icons/projects-light.svg"
-  );
-  const engagementsIcon = useColorModeValue(
-    "/icons/engagements-dark.svg",
-    "/icons/engagements-light.svg"
-  );
   const blogIcon = useColorModeValue(
     "/icons/blog-dark.svg",
     "/icons/blog-light.svg"
@@ -38,12 +31,9 @@ export const Nav = () => {
     "0px 4px 15px 0px rgba(226,175,255, 0.10)"
   );
   const logo = useColorModeValue("/logo-dark.svg", "/logo-light.svg");
-  const itemShadow = useColorModeValue(
-    "0px 4px 15px 0px rgba(0,0,0, 0.2)",
-    "0px 4px 15px 0px rgba(226,175,255, 0.2)"
-  );
   const tooltipBg = useColorModeValue("brand.gradient", "brand.gradient");
   const tooltipText = useColorModeValue("white", "white");
+  const lineColor = useColorModeValue("brand.grey", "brand.lightGrey");
 
   return (
     <Flex
@@ -71,6 +61,7 @@ export const Nav = () => {
       >
         <Flex alignItems="center" justifyContent="center">
           <Image draggable="false" src={logo} height="32px" borderRadius={6} />
+
           <ColorModeButton
             position="relative"
             top="0"
@@ -82,10 +73,6 @@ export const Nav = () => {
             cursor="pointer"
             width="50px"
             height="32px"
-            whileTap={{
-              scale: 1.2,
-              transition: { duration: 0.1 },
-            }}
             display={["none", "flex", "flex"]}
           />
         </Flex>
@@ -97,6 +84,8 @@ export const Nav = () => {
           width="calc(100% - 80px)"
           gap="8px"
         >
+          <Divider width="100%" borderColor={lineColor} />
+
           <Tooltip
             borderRadius={6}
             label="Home"
@@ -117,12 +106,13 @@ export const Nav = () => {
               height="32px"
               whileHover={{
                 scale: 1.1,
-                transition: { duration: 0.05, type: "spring" },
-                boxShadow: itemShadow,
+                transition: { duration: 0.1 },
+                rotate: 10,
               }}
               whileTap={{
                 scale: 1.2,
                 transition: { duration: 0.1 },
+                rotate: -10,
               }}
             >
               <Box
@@ -165,12 +155,13 @@ export const Nav = () => {
               width="50px"
               whileHover={{
                 scale: 1.1,
-                transition: { duration: 0.05, type: "spring" },
-                boxShadow: itemShadow,
+                transition: { duration: 0.1 },
+                rotate: 10,
               }}
               whileTap={{
                 scale: 1.2,
                 transition: { duration: 0.1 },
+                rotate: -10,
               }}
             >
               <Box
@@ -185,102 +176,6 @@ export const Nav = () => {
                 <Image
                   draggable="false"
                   src={aboutIcon}
-                  width={4}
-                  height={4}
-                  boxSizing="border-box"
-                />
-              </Box>
-            </ListItem>
-          </Tooltip>
-          <Tooltip
-            display={["none", "none", "block"]}
-            borderRadius={6}
-            label="Projects"
-            fontSize="md"
-            placement="bottom"
-            bg={tooltipBg}
-            color={tooltipText}
-            fontWeight="bold"
-            gutter={16}
-          >
-            <ListItem
-              borderRadius="10px"
-              marginY={1}
-              as={motion.li}
-              listStyleType="none"
-              height="32px"
-              cursor="pointer"
-              width="50px"
-              whileHover={{
-                scale: 1.1,
-                transition: { duration: 0.05, type: "spring" },
-                boxShadow: itemShadow,
-              }}
-              whileTap={{
-                scale: 1.2,
-                transition: { duration: 0.1 },
-              }}
-            >
-              <Box
-                as={Link}
-                href="/projects"
-                width="100%"
-                height="100%"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-              >
-                <Image
-                  draggable="false"
-                  src={projectsIcon}
-                  width={4}
-                  height={4}
-                  boxSizing="border-box"
-                />
-              </Box>
-            </ListItem>
-          </Tooltip>
-          <Tooltip
-            display={["none", "none", "block"]}
-            borderRadius={6}
-            label="Engagements"
-            fontSize="md"
-            placement="bottom"
-            bg={tooltipBg}
-            color={tooltipText}
-            fontWeight="bold"
-            gutter={16}
-          >
-            <ListItem
-              borderRadius="10px"
-              marginY={1}
-              as={motion.li}
-              listStyleType="none"
-              height="32px"
-              cursor="pointer"
-              width="50px"
-              whileHover={{
-                scale: 1.1,
-                transition: { duration: 0.05, type: "spring" },
-                boxShadow: itemShadow,
-              }}
-              whileTap={{
-                scale: 1.2,
-                transition: { duration: 0.1 },
-              }}
-            >
-              <Box
-                as={Link}
-                href="/engagements"
-                width="100%"
-                height="100%"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-              >
-                <Image
-                  draggable="false"
-                  src={engagementsIcon}
                   width={4}
                   height={4}
                   boxSizing="border-box"
@@ -309,12 +204,13 @@ export const Nav = () => {
               width="50px"
               whileHover={{
                 scale: 1.1,
-                transition: { duration: 0.05, type: "spring" },
-                boxShadow: itemShadow,
+                transition: { duration: 0.1 },
+                rotate: 10,
               }}
               whileTap={{
                 scale: 1.2,
                 transition: { duration: 0.1 },
+                rotate: -10,
               }}
             >
               <Box
