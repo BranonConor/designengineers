@@ -191,8 +191,8 @@ export default function Home() {
           bg={sectionBg}
           width="100%"
           padding={4}
-          mt={12}
-          mb={8}
+          mt={16}
+          mb={10}
         >
           <Heading as="h3" mt={2} mb={4} fontWeight={400}>
             Who we REALLY are
