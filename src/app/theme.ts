@@ -14,6 +14,7 @@ const colors = {
     pink: "#FF008A", //orange now, forgive me father for I have sinned with this bad code
     darkPink: "#980059",
     blue: "#0080c7",
+    orange: "#FF8A00",
     gradient:
       "linear-gradient(141.627deg, #F14D70 11%, #FF008A 32%, #FF446C 52%, #FFB016 87%);",
   },

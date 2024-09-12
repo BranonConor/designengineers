@@ -21,6 +21,7 @@ export const PageWrapper: React.FC<BoxProps> = ({
   const [rightEdge, setRightEdge] = useState<number | null>(
     ref.current && ref.current.getBoundingClientRect().right - 2
   );
+  const [isEndOfPage, setIsEndOfPage] = useState(false);
 
   const onScroll = () => {
     if (global.window) {
@@ -43,6 +44,12 @@ export const PageWrapper: React.FC<BoxProps> = ({
 
       setLeftEdge(leftEdge);
       setRightEdge(rightEdge);
+
+      if (Math.round(scrolled) === 100) {
+        setIsEndOfPage(true);
+      } else {
+        setIsEndOfPage(false);
+      }
     }
   };
 
@@ -111,7 +118,7 @@ export const PageWrapper: React.FC<BoxProps> = ({
         >
           <Box
             borderLeftWidth={["0px", "0px", "1px"]}
-            borderLeftColor={lineColor}
+            borderLeftColor={isEndOfPage ? "brand.pink" : lineColor}
             height={`${scrollTop}%`}
             position="fixed"
             left={leftEdge || 0}
@@ -119,12 +126,13 @@ export const PageWrapper: React.FC<BoxProps> = ({
           />
           <Box
             borderLeftWidth={["0px", "0px", "1px"]}
-            borderLeftColor={lineColor}
+            borderLeftColor={isEndOfPage ? "brand.orange" : lineColor}
             height={`${scrollTop}%`}
             position="fixed"
             left={rightEdge || 0}
             bottom="-60px"
           />
+
           {children}
         </Box>
       </Box>
