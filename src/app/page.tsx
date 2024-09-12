@@ -51,6 +51,21 @@ export default function Home() {
     rightAnimation,
   ];
 
+  const names = [
+    "Design Engineer",
+    "Design Technologist",
+    "UX Engineer",
+    "UI Engineer",
+    "Frontend Engineer",
+    "Creative Technologist",
+    "UX Developer",
+    "UI/UX Developer/Engineer",
+    "UX Prototyper",
+    "Design Systems Engineer",
+    "...",
+    "Dare I keep going?",
+  ];
+
   return (
     <PageWrapper bg={bg}>
       <Flex
@@ -200,6 +215,7 @@ export default function Home() {
           <Heading
             as="h3"
             fontSize="1.5rem"
+            mt={8}
             mb={4}
             fontWeight="400"
             color="brand.orange"
@@ -217,11 +233,43 @@ export default function Home() {
             have as a design engineer. Will you be a prototyper? A design
             systems engineer? An accessibility specialist? A little bit of
             everything? Depends greatly on the porportion of design/code skills
-            you are bringing to the table.
+            you are bringing to the table. More on that below.
           </Text>
+
+          <Heading
+            as="h3"
+            fontSize="1.5rem"
+            mt={8}
+            mb={4}
+            fontWeight="400"
+            color="brand.orange"
+          >
+            We go by many names 🦸🏻‍♂️
+          </Heading>
           <Text as="p" mb={4}>
-            At that - what ARE the various workstreams design engineers usually
-            have/own? Great question, let's break it down (🕺🏻) 👇🏽
+            We get called all sorts of different things across the industry,
+            with no realmethod to the madness. But make no mistake - still us👋!
+            Things like:
+          </Text>
+          <Flex gap={2} flexWrap="wrap" my={4}>
+            {names.map((name) => (
+              <Text
+                as="span"
+                fontSize="12px"
+                paddingY="2px"
+                paddingX="6px"
+                bg="brand.blue"
+                borderRadius={120}
+                maxWidth="100%"
+              >
+                {name}
+              </Text>
+            ))}
+          </Flex>
+          <Text as="p" mb={4}>
+            So with all these names and such a wide skillset - what ARE the
+            various workstreams design engineers usually have/own? Let's break
+            it down (🕺🏻) 👇🏽
           </Text>
         </Box>
 
