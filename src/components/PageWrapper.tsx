@@ -127,41 +127,42 @@ export const PageWrapper: React.FC<BoxProps> = ({
             left={leftEdge || 0}
             top="64px"
           >
-            <Text
-              display={["none", "none", "block"]}
-              position="absolute"
-              bottom="-24px"
-              left="-10px"
-              width="36px"
-              fontSize="0.75rem"
-            >
-              {prog}%
-            </Text>
+            {prog > 0 && (
+              <Text
+                display={["none", "none", "block"]}
+                position="absolute"
+                bottom="-24px"
+                left="-10px"
+                width="36px"
+                fontSize="0.75rem"
+              >
+                {prog}%
+              </Text>
+            )}
           </Box>
           <Box
             transition="0.1s ease all"
-            width="1px"
+            width={["0", "0", "1px"]}
             borderRadius={10}
             bg={isEndOfPage ? lineColor : "brand.orange"}
             height={`${scrollTop}%`}
             position="fixed"
-            left={[
-              (rightEdge && rightEdge - 20) || 0,
-              rightEdge || 0,
-              rightEdge || 0,
-            ]}
+            left={rightEdge || 0}
             bottom="-98px"
             zIndex={5}
           >
-            <Text
-              position="relative"
-              bottom="24px"
-              left="-10px"
-              width="36px"
-              fontSize="0.75rem"
-            >
-              {prog}%
-            </Text>
+            {prog > 0 && (
+              <Text
+                display={["none", "none", "block"]}
+                position="relative"
+                bottom="24px"
+                left="-10px"
+                width="36px"
+                fontSize="0.75rem"
+              >
+                {prog}%
+              </Text>
+            )}
           </Box>
 
           {children}
