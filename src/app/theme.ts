@@ -1,7 +1,8 @@
 "use client";
 
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, StyleFunctionProps } from "@chakra-ui/react";
 import { buttonTheme } from "./componentOverrides/button";
+import { mode } from "@chakra-ui/theme-tools";
 
 const colors = {
   white: "#FFFFFF",
@@ -32,4 +33,15 @@ const components = {
   Button: buttonTheme,
 };
 
-export const theme = extendTheme({ colors, config, components });
+export const theme = extendTheme({
+  colors,
+  config,
+  components,
+  styles: {
+    global: (props: StyleFunctionProps) => ({
+      body: {
+        bg: mode("brand.lightBg", "brand.darkBg")(props),
+      },
+    }),
+  },
+});

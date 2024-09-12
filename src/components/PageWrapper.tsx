@@ -117,16 +117,20 @@ export const PageWrapper: React.FC<BoxProps> = ({
           exit={{ opacity: 0, left: "-32px" }}
         >
           <Box
-            borderLeftWidth={["0px", "0px", "1px"]}
-            borderLeftColor={isEndOfPage ? "brand.pink" : lineColor}
+            transition="0.1s ease all"
+            width={["0", "0", "1px"]}
+            borderRadius={10}
+            bg={isEndOfPage ? "brand.pink" : lineColor}
             height={`${scrollTop}%`}
             position="fixed"
             left={leftEdge || 0}
-            top="64px"
+            top="60px"
           />
           <Box
-            borderLeftWidth={["0px", "0px", "1px"]}
-            borderLeftColor={isEndOfPage ? "brand.orange" : lineColor}
+            transition="0.1s ease all"
+            width={["0", "0", "1px"]}
+            borderRadius={10}
+            bg={isEndOfPage ? "brand.orange" : lineColor}
             height={`${scrollTop}%`}
             position="fixed"
             left={rightEdge || 0}
