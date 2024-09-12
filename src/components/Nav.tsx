@@ -7,10 +7,13 @@ import {
   useColorModeValue,
   Tooltip,
   Divider,
+  useColorMode,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import React from "react";
 import { ColorModeButton } from "./ColorModeButton";
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 export const Nav = () => {
   const homeIcon = useColorModeValue(
@@ -34,6 +37,12 @@ export const Nav = () => {
   const tooltipBg = useColorModeValue("brand.gradient", "brand.gradient");
   const tooltipText = useColorModeValue("white", "white");
   const lineColor = useColorModeValue("brand.grey", "brand.lightGrey");
+
+  const { toggleColorMode } = useColorMode();
+  const icon = useColorModeValue(
+    <MoonIcon color="brand.grey" width="16px" height="16px" />,
+    <SunIcon width="16px" height="16px" />
+  );
 
   return (
     <Flex
@@ -63,19 +72,28 @@ export const Nav = () => {
         <Flex alignItems="center" justifyContent="center">
           <Image draggable="false" src={logo} height="32px" borderRadius={6} />
 
-          <ColorModeButton
-            position="relative"
-            top="0"
-            bottom="0"
-            right="0"
-            boxShadow="none"
-            borderRadius="10px"
-            bg="none"
-            cursor="pointer"
-            width="50px"
-            height="32px"
-            display={["none", "flex", "flex"]}
-          />
+          <Box
+            as={motion.button}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            onClick={toggleColorMode}
+            aria-label="color mode toggle"
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.1 },
+              rotate: 10,
+            }}
+            whileTap={{
+              scale: 1.2,
+              transition: { duration: 0.1 },
+              rotate: -10,
+            }}
+            padding="14px"
+            mr="8px"
+          >
+            {icon}
+          </Box>
         </Flex>
         <UnorderedList
           display="flex"
