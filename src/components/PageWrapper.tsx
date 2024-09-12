@@ -14,7 +14,6 @@ export const PageWrapper: React.FC<BoxProps> = ({
 }) => {
   const lineColor = useColorModeValue("brand.grey", "brand.lightGrey");
   const [scrollTop, setScrollTop] = useState(0);
-  const [rightScrollTop, setRightScrollTop] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const [leftEdge, setLeftEdge] = useState<number | null>(
     ref.current && ref.current.getBoundingClientRect().left + 2
@@ -27,7 +26,6 @@ export const PageWrapper: React.FC<BoxProps> = ({
     if (global.window) {
       // This will calculate how many pixels the page is vertically
       const winScroll = document.documentElement.scrollTop;
-      const rightWinScroll = document.documentElement.scrollTop - 64;
       // This is responsible for subtracticing the total height of the page - where the users page is scrolled to
       const height =
         document.documentElement.scrollHeight -
@@ -35,10 +33,8 @@ export const PageWrapper: React.FC<BoxProps> = ({
 
       // This will calculate the final total of the percentage of how much the user has scrolled.
       const scrolled = (winScroll / height) * 100;
-      const rightScrolled = (rightWinScroll / height) * 100;
 
       setScrollTop(scrolled);
-      setRightScrollTop(rightScrolled);
 
       const leftEdge =
         ref.current && ref.current.getBoundingClientRect().left + 2;
@@ -124,10 +120,10 @@ export const PageWrapper: React.FC<BoxProps> = ({
           <Box
             borderLeftWidth={["0px", "0px", "1px"]}
             borderLeftColor={lineColor}
-            height={`${rightScrollTop}%`}
+            height={`${scrollTop}%`}
             position="fixed"
             left={rightEdge || 0}
-            bottom="0"
+            bottom="-60px"
           />
           {children}
         </Box>
