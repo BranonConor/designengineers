@@ -70,7 +70,7 @@ export const Nav = () => {
         py="2px"
       >
         <Flex alignItems="center" justifyContent="center">
-          <Image draggable="false" src={logo} height="32px" borderRadius={6} />
+          <Image draggable="false" src={logo} height="32px" borderRadius={4} />
 
           <Box
             as={motion.button}
@@ -100,7 +100,7 @@ export const Nav = () => {
           alignItems="center"
           justifyContent="flex-end"
           margin={0}
-          width="calc(100% - 80px)"
+          width="calc(100% - 36px - 104.14px)"
           gap="8px"
         >
           <Divider width="100%" borderColor={lineColor} />
