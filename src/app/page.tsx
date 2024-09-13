@@ -248,8 +248,8 @@ export default function Home() {
           </Heading>
           <Text as="p" mb={4}>
             We get called all sorts of different things across the industry,
-            with no realmethod to the madness. But make no mistake - still us👋!
-            Things like:
+            with no real method to the madness. But make no mistake - it's all
+            still us 👋! Things like:
           </Text>
           <Flex gap={2} flexWrap="wrap" my={4}>
             {names.map((name) => (
