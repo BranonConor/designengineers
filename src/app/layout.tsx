@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Providers } from "./providers";
 import { ColorModeScript, theme } from "@chakra-ui/react";
 import { ColorModeButton } from "@/components/ColorModeButton";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Branon Eusebio",
@@ -31,6 +32,7 @@ export default function RootLayout({
           <ColorModeButton />
           {children}
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
